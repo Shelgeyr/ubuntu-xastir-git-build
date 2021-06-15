@@ -11,10 +11,12 @@ else
     real_user=$(whoami)
 fi
 
-cp xastir.desktop /usr/share/applications/xastir.desktop
+echo "Install desktop launcer"
 
-sudo -u $real_user chmod +x ubuntu-xastir-git-build.sh
-sudo -u $real_user ./ubuntu-xastir-git-build.sh
+sudo cp xastir.desktop /usr/share/applications/xastir.desktop
+
+echo "Running common scripts"
+
 sudo //usr/local/share/xastir/scripts/get-fcc-rac.pl
 sudo //usr/local/share/xastir/scripts/get-NWSdata
 sudo //usr/local/share/xastir/scripts/get-pop NE
