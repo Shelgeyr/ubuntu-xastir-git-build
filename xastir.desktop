@@ -5,4 +5,4 @@ Type=Application
 Terminal=false
 Exec=xastir &
 Name=Xastir
-Icon=/usr/local/share/xastir/symbols/xastir.png
+Icon=/usr/local/share/xastir/symbols/icon.png
