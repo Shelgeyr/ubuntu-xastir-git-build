@@ -226,6 +226,9 @@ if $needfont; then
   xset +fp /usr/share/fonts/X11/100dpi,/usr/share/fonts/X11/75dpi
 fi
 
+# copy xastir.desktop file so we have a launcher
+cp xastir.desktop //usr/share/applications/xastir.desktop
+
 # make a source dir to work in
 mkdir -p ~/src ; cd ~/src || exit 1
 
@@ -243,5 +246,4 @@ mkdir -p build; cd build || exit 1
 # make it (-j = use SMP, if available), then install it (in /usr/local, by default)
 make clean && make -j && sudo make install
 
-# copy xastir.desktop file so we have a launcher
-cp xastir.desktop //usr/share/applications/xastir.desktop
+
