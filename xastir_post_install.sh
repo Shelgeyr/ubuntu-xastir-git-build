@@ -15,3 +15,11 @@ cp xastir.desktop /usr/share/applications/xastir.desktop
 
 sudo -u $real_user chmod +x ubuntu-xastir-git-build.sh
 sudo -u $real_user ./ubuntu-xastir-git-build.sh
+sudo //usr/local/share/xastir/scripts/get-fcc-rac.pl
+sudo //usr/local/share/xastir/scripts/get-NWSdata
+sudo //usr/local/share/xastir/scripts/get-pop NE
+sudo //usr/local/share/xastir/scripts/get-gnis NE
+
+echo "Installation is now complete please configure Xastir as needed"
+
+
