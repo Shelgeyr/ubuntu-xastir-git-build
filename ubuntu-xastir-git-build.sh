@@ -18,6 +18,7 @@
 # July 9, 2016 Added support for Ubuntu 16.04
 # July 4, 2018, Added support for Ubuntu 16.10, 17.04, 17.10 & 18.04
 # Nov 18, 2020, Added support for Ubuntu 18.10, 19.04, 19.10, 20.04, & 20.10
+# Jun 15, 2021, Added support for Ubuntu 21.04 and desktop file scripting
 
 gis=true
 IDK=true
@@ -91,6 +92,13 @@ fi
 if grep -q "^deb.*groovy-updates" /etc/apt/sources.list; then
   echo "Detected Ubuntu 20.10 (groovy)."
   release=groovy
+  gis=false
+  IDK=false
+  needfont=true
+fi
+if grep -q "^deb.*hirsute-updates" /etc/apt/sources.list; then
+  echo "Detected Ubuntu 21.04 (hirsute)."
+  release=hirsute
   gis=false
   IDK=false
   needfont=true
@@ -234,3 +242,6 @@ mkdir -p build; cd build || exit 1
 
 # make it (-j = use SMP, if available), then install it (in /usr/local, by default)
 make clean && make -j && sudo make install
+
+# copy xastir.desktop file so we have a launcher
+cp xastir.desktop //usr/share/applications/xastir.desktop
