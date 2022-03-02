@@ -19,7 +19,7 @@
 # Jul 04 2018 Added support for Ubuntu 16.10, 17.04, 17.10, and 18.04
 # Nov 18 2020 Added support for Ubuntu 18.10, 19.04, 19.10, 20.04, and 20.10
 # Jun 15 2021 Added support for Ubuntu 21.04
-# Mar 02 2022 Added support for Ubuntu 21.10 and 22.04; edited comments for clarity
+# Mar 02 2022 Added support for Ubuntu 21.10 and 22.04; edited comments for clarity; fixed python-dev with python2-dev for versions > 20.01
 
 gis=true
 IDK=true
@@ -90,6 +90,9 @@ if grep -q "^deb.*focal-updates" /etc/apt/sources.list; then
   IDK=false
   needfont=true
 fi
+
+packages="build-essential git autoconf automake xorg-dev graphicsmagick gv gpsman gpsmanshp libpcre3-dev libdb5.3-dev python2-dev libax25-dev shapelib libshp-dev festival festival-dev libwebp-dev libgraphicsmagick1-dev libmotif-dev libcurl4-openssl-dev libproj-dev libgeotiff-dev xfonts-100dpi xfonts-75dpi"
+
 if grep -q "^deb.*groovy-updates" /etc/apt/sources.list; then
   echo "Detected Ubuntu 20.10 (groovy)."
   release=groovy
