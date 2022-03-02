@@ -112,7 +112,7 @@ if grep -q "^deb.*impish-updates" /etc/apt/sources.list; then
   needfont=true
 fi
 if grep -q "^deb.*jammy-updates" /etc/apt/sources.list; then
-  echo "Detected Ubuntu 22.04 LTS (hirsute)."
+  echo "Detected Ubuntu 22.04 LTS (jammy)."
   release=jammy
   gis=false
   IDK=false
